@@ -311,15 +311,15 @@ $transaction->setCreditCard($creditCard);</code></pre>
                                     <h3 class="block-title ">5. Criando uma chamada</h3>
                                     <p>Inclua a transação no contexto da API e inicie a chamada de transação passando o objeto contexto:</p>
                                     <pre><code class="language-php ">/// After Step 4
-    try {
-        $apiContext->setTransaction($transaction);
-        return KryptonPay\Api\KryptonPay::createPayment($apiContext);
-    }
-    catch (\Exception $e) {
-        // This will print the detailed information on the exception.
-        //REALLY HELPFUL FOR DEBUGGING
-        echo $ex->getData();
-    }</code></pre>
+try {
+    $apiContext->setTransaction($transaction);
+    return KryptonPay\Api\KryptonPay::createPayment($apiContext);
+}
+catch (\Exception $e) {
+    // This will print the detailed information on the exception.
+    //REALLY HELPFUL FOR DEBUGGING
+    echo $ex->getData();
+}</code></pre>
                                 </div>
                             </section>
                         </div>
