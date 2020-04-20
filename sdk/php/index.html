@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>KryptonPay Open Source - SDK PHP</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nesta wiki pode ser encontrado assuntos como instalação, verificação de exemplos e configurações avançadas em nossa SDK PHP.">
+    <meta name="author" content="KryptonPay">
+    <meta name="keyword" content="github php sdk krypton pay kryptonpay doc integration integracao documentation dev developers">
+    <link rel="shortcut icon" href="https://kryptonpay.com.br/assets/img/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="../../assets/plugins/elegant_font/css/style.css">
+    <link id="theme-style" rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body class="body-blue">
+    <div class="page-wrapper">
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <img src="https://kryptonpay.com.br/assets/img/site/logo-site.png" alt="KryptonPay" />
+                        <span class="text-highlight">Open</span><span class="text-bold"> Source</span>
+                    </h1>
+                </div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                    <li class="breadcrumb-item active">SKP PHP</li>
+                </ol>
+            </div>
+        </header>
+        <div class="doc-wrapper">
+            <div class="container">
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="introducao-section" class="doc-section">
+                                <h2 class="section-title">Introdução</h2>
+                                <div class="section-block">
+                                    <p>
+                                        Nesta wiki pode ser encontrado assuntos como instalação, verificação de exemplos e configurações avançadas em nossa SDK. Esta documentação é específica apenas para usos do SDK.
+                                    </p>
+                                </div>
+                            </section>
+                            <section id="download-section" class="doc-section">
+                                <h2 class="section-title">Download</h2>
+                                <div class="section-block">
+                                    <p>
+                                        Existem duas maneiras de instalar o Krypton Pay PHP SDK. A primeira é usando o Composer como seu gerenciador de dependências. Se você preferir não usar o composer e quiser fazer o download do pacote zipado, você pode fazer isso seguindo as instruções
+                                        de Download Direto.
+                                    </p>
+                                    <a href="https://getcomposer.org/" class="btn btn-blue" target="_blank">
+                                        <i class="fas fa-download"></i> Download Composer
+                                    </a>
+                                    <a href="https://github.com/KryptonPay/kryptonpay-php-sdk/releases/latest/" class="btn btn-blue" target="_blank">
+                                        <i class="fas fa-download"></i> Download Krypton Pay SDK Source
+                                    </a>
+                                </div>
+                            </section>
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Instalação</h2>
+                                <div id="installation-composer" class="section-block">
+                                    <h3 class="block-title">Composer</h3>
+                                    <p>
+                                        O <a href="https://getcomposer.org/" rel="nofollow">Composer</a> é a maneira recomendada de instalar o SDK. Como alternativa, se você preferir não usar o Composer, mas quiser instalar nosso SDK, faça isso fazendo
+                                        um download direto.
+                                    </p>
+                                    <p>
+                                        Atualmente, o Krypton Pay PHP SDK está disponível em <a href="https://packagist.org/packages/kryptonpay/kryptonpay-php-sdk" rel="nofollow">Packagist</a> . Para usá-lo em seu projeto, você precisa incluí-lo como
+                                        uma dependência no arquivo <code>composer.json</code> de seu projeto.
+                                    </p>
+                                </div>
+                                <div id="composer-1" class="section-block">
+                                    <h3 class="block-title">Passo 1</h3>
+                                    <p>
+                                        Baixe o <a href="https://getcomposer.org/" rel="nofollow">Composer</a> se ainda não estiver instalado.
+                                    </p>
+                                </div>
+                                <div id="composer-2" class="section-block">
+                                    <h3 class="block-title">Passo 2</h3>
+                                    <p>
+                                        Vá para o diretório de seu projeto. Se você não tiver um, basta criar um diretório.
+                                    </p>
+
+                                    <pre><code class="language-shell-session">$ cd project</code></pre>
+                                </div>
+                                <div id="composer-3" class="section-block">
+                                    <h3 class="block-title">Passo 3</h3>
+                                    <p>
+                                        Execute o comando de instalação do SDK via composer
+                                    </p>
+                                    <pre><code class="language-shell-session">$ composer require kryptonpay/kryptonpay-php-sdkt</code></pre>
+                                    <p>
+                                        <b>Obs.:</b> Substitua o composer por composer.phar, se necessário. A saída deve ser algo como isto:
+                                    </p>
+                                    <pre><code class="language-shell-session">Using version ^2.0 for kryptonpay/kryptonpay-php-sdk
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 16 installs, 0 updates, 0 removals
+- Installing symfony/polyfill-mbstring (v1.15.0): Loading from cache
+- Installing symfony/var-dumper (v5.0.7): Loading from cache
+- Installing tightenco/collect (v7.6.1): Downloading (100%)
+- Installing symfony/polyfill-ctype (v1.15.0): Loading from cache
+- Installing symfony/inflector (v5.0.7): Loading from cache
+- Installing symfony/property-access (v5.0.7): Loading from cache
+- Installing symfony/serializer (v5.0.7): Loading from cache
+- Installing ralouphie/getallheaders (3.0.3): Downloading (100%)
+- Installing psr/http-message (1.0.1): Downloading (100%)
+- Installing guzzlehttp/psr7 (1.6.1): Downloading (100%)
+- Installing guzzlehttp/promises (v1.3.1): Downloading (100%)
+- Installing guzzlehttp/guzzle (6.5.2): Downloading (100%)
+- Installing symfony/translation-contracts (v2.0.1): Loading from cache
+- Installing symfony/translation (v5.0.7): Loading from cache
+- Installing nesbot/carbon (2.32.2): Loading from cache
+- Installing kryptonpay/kryptonpay-php-sdk (2.0.16): Downloading (100%)
+Writing lock file
+Generating autoload files</code></pre>
+                                </div>
+                                <div id="composer-4" class="section-block">
+                                    <h3 class="block-title">Passo 4</h3>
+                                    <p>
+                                        É isso aí. Você tem o Krypton Pay PHP SDK instalado!
+                                    </p>
+                                </div>
+
+
+
+                                <div id="installation-download" class="section-block">
+                                    <h3 class="block-title">Download Direto</h3>
+                                    <p>
+                                        O <a href="https://getcomposer.org/" rel="nofollow">Composer</a> é a maneira recomendada de instalar o SDK. Como alternativa, se você preferir não usar o Composer, mas quiser instalar nosso SDK, faça isso fazendo
+                                        um download direto.
+                                    </p>
+                                    <p>Caso não queira quiser usar o <a href="https://getcomposer.org/" rel="nofollow">Composer</a>, poderá obter o <a href="https://github.com/KryptonPay/kryptonpay-php-sdk/releases/latest">zip que contém o Krypton Pay PHP SDK</a>                                        com todas as suas dependências. Portanto as atualizações deverão ser feitas manualmente, obtendo sempre o ultimo release disponível.</p>
+                                </div>
+                                <div id="download-1" class="section-block">
+                                    <h3 class="block-title">Passo 1</h3>
+                                    <p>
+                                        Baixar <a href="https://github.com/KryptonPay/kryptonpay-php-sdk/releases/latest">arquivo zip</a> com a release desejada.
+                                    </p>
+                                    <p>
+                                        O nome do arquivo será algo como: kryptonpay-php-sdk-*.zip<br>
+                                    </p>
+                                    <p>
+                                        Para ver a lista com todas as releases <a href="https://github.com/KryptonPay/kryptonpay-php-sdk/releases">clique aqui</a>.
+                                    </p>
+                                    <p>
+                                        Obs.: Recomendado a última disponível.
+                                    </p>
+                                </div>
+                                <div id="download-2" class="section-block">
+                                    <h3 class="block-title">Passo 2</h3>
+                                    <p>
+                                        Vá para o diretório de seu projeto. Se você não tiver um, basta criar um diretório.
+                                    </p>
+
+                                    <pre><code class="language-shell-session">$ cd project</code></pre>
+                                </div>
+                                <div id="download-3" class="section-block">
+                                    <h3 class="block-title">Passo 3</h3>
+                                    <p>
+                                        Descompacte e copie o diretório para o local do projeto
+                                    </p>
+                                    <pre><code class="language-shell-session">$ unzip kryptonpay-php-sdk-*.zip -d /path/to/directory</code></pre>
+                                </div>
+                                <div id="download-4" class="section-block">
+                                    <h3 class="block-title">Passo 4</h3>
+                                    <p>
+                                        É isso aí. Você tem o Krypton Pay PHP SDK instalado!
+                                    </p>
+                                </div>
+                            </section>
+
+                            <!-- PRIMEIRA CHAMADA -->
+                            <section id="section-primeira-chamada" class="doc-section">
+                                <h2 class="section-title">Primeira chamada</h2>
+                                <div class="section-block">
+                                    <p>Depois de concluir a instalação , você poderá fazer a primeira chamada. Para escrever um aplicativo que use o SDK, você criará seu primeiro script PHP que criará uma transação do Krypton Pay.</p>
+                                </div>
+                                <div id="primeira-chamada-1" class="section-block">
+                                    <h3 class="block-title">Introdução</h3>
+                                    <p>Primeiro, crie um arquivo <code>first.php</code> no local raiz do projeto. Como alternativa, você pode copiar o arquivo completo <a href="https://gist.github.com/KryptonPay/69798dbc97e9f498c86ad0b280eca243">aqui</a>.</p>
+                                </div>
+                                <div id="primeira-chamada-2" class="section-block">
+                                    <h3 class="block-title">1. Carregando o pacote SDK</h3>
+                                    <p>Carregue automaticamente o pacote SDK. Isso incluirá todos os arquivos e classes no seu carregador automático. Observe que, se você baixou nosso SDK usando o Composer, substitua PayPal-PHP-SDK por <code>vendor</code>.
+                                        Isso se aplica a todo código de exemplo em nosso SDK.
+                                    </p>
+                                    <p>
+                                        Caso esteja utilizando o Composer:
+                                    </p>
+                                    <pre><code class="language-php">// Used for composer based installation
+require __DIR__ . '/vendor/autoload.php';</code></pre>
+                                    <p>
+                                        Caso esteja utilizando o Download Direto:
+                                    </p>
+                                    <pre><code class="language-php">// Use below for direct download installation
+require __DIR__ . '/KryptonPay-PHP-SDK/autoload.php';</code></pre>
+                                </div>
+
+                                <div id="primeira-chamada-3" class=" section-block ">
+                                    <h3 class="block-title ">2. Token de acesso</h3>
+                                    <p>Forneça o Token de acesso. Substitua o dado por seu Token, que pode ser obtido <a href="https://kryptonpay.com.br/perfil " rel="nofollow ">aqui</a></p>
+                                    <pre><code class="language-php ">// After Step 1
+$apiContext = new KryptonPay\Api\ApiContext();
+$apiContext->setApiToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c');</code></pre>
+                                </div>
+
+                                <div id="primeira-chamada-4" class=" section-block ">
+                                    <h3 class="block-title ">3. Ambiente</h3>
+                                    <p>Forneça o qual ambiente a chamada deverá ser executada:</p>
+                                    <pre><code class="language-php ">// After Step 2
+$apiContext->setIsSandbox(true);</code></pre>
+                                </div>
+
+                                <div id="primeira-chamada-5" class=" section-block ">
+                                    <h3 class="block-title ">4. Crie uma transação</h3>
+                                    <p>4.1 Inicie uma transação incluindo os dados mencionados aqui:</p>
+                                    <pre><code class="language-php ">// After Step 3
+$transaction = new KryptonPay\Api\Transaction();
+$transaction->setPaymentType(KryptonPay\Api\ApiContext::SLIPBANK);
+$transaction->setIsQuickSale(false);
+$transaction->setApplication(1);
+$transaction->setReference('0001');</code></pre>
+
+                                    <p>4.2 Crie um objeto pagador:</p>
+                                    <pre><code class="language-php ">$payerAddress = new KryptonPay\Api\Address();
+$payerAddress->setStreet('Rua A');
+$payerAddress->setNumber('1');
+$payerAddress->setDistrict('Bairro');
+$payerAddress->setZipCode('12345678');
+$payerAddress->setComplement('Complemento');
+$payerAddress->setStateInitials('MG');
+$payerAddress->setCityName('Belo Horizonte');
+$payerAddress->setCountryName('Brasil');
+
+$payer = new KryptonPay\Api\Payer();
+$payer->setType(KryptonPay\Api\ApiContext::PERSON_NATURAL);
+$payer->setBirthDate('1995-08-06');
+$payer->setName('Nome Pagador');
+$payer->setIdentity('12345678911');
+$payer->setEmail('usuario@provedor.com');
+$payer->setPhone('31999999999');
+$payer->setAddress($payerAddress);
+
+$transaction->setPayer($payer);</code></pre>
+
+                                    <p>4.3 Crie um objeto item:</p>
+                                    <pre><code class="language-php ">$item = new KryptonPay\Api\Item();
+$item->setCode('0001');
+$item->setDescription('Item nome');
+$item->setUnitPrice(1.0);
+$item->setQuantity(1);
+$transaction->addItem($item); </code></pre>
+
+                                    <p>4.4 <b>Opcionalmente</b>, crie um objeto Split:</p>
+                                    <pre><code class="language-php ">$split = new KryptonPay\Api\Split();
+$split->setDocument('12345678911');
+$split->setValue(1.00);
+//Value or Tax
+//$split->setTax(1.00);
+$transaction->addSplit($split); </code></pre>
+
+                                    <p>4.5 Crie um objeto com o método de pagamento escolhido:</p>
+                                    <ul>Boleto bancário</ul>
+                                    <pre><code class="language-php ">$slipBank = new KryptonPay\Api\Slip();
+$slipBank->setValue(1.00);
+$slipBank->setInstruction('Pagar em qualquer correspondente bancário');
+$slipBank->setDueDate('2050-01-01');
+$slipBank->addObservation('Observação 01');
+$slipBank->addObservation('Observação 02');
+
+$transaction->setSlip($slipBank); </code></pre>
+                                    <ul>Cartão de Crédito</ul>
+                                    <pre><code class="language-php ">$cardholderAddress = new KryptonPay\Api\Address();
+$cardholderAddress->setStreet('Rua A');
+$cardholderAddress->setNumber('1');
+$cardholderAddress->setDistrict('Bairro');
+$cardholderAddress->setZipCode('12345678');
+$cardholderAddress->setComplement('Complemento');
+$cardholderAddress->setStateInitials('MG');
+$cardholderAddress->setCityName('Belo Horizonte');
+$cardholderAddress->setCountryName('Brasil');
+
+$creditCard = new KryptonPay\Api\CreditCard();
+$creditCard->setValue(5.00);
+$creditCard->setNumberInstallments(1);
+$creditCard->setExpirationDate('2050-01-01');
+$creditCard->setSaleDescription('LOJA*TESTE*COMPRA-123');
+$creditCard->setCardNumber('1111222233334444');
+$creditCard->setFirstName('John');
+$creditCard->setLastName('Doe');
+$creditCard->setCardholder('John Doe');
+$creditCard->setSecurityCode('111');
+$creditCard->setMonthExpiration('01');
+$creditCard->setYearExpiration('25');
+$creditCard->setAddress($cardholderAddress);
+$transaction->setCreditCard($creditCard);</code></pre>
+                                </div>
+                                <div id="primeira-chamada-6" class=" section-block ">
+                                    <h3 class="block-title ">5. Criando uma chamada</h3>
+                                    <p>Inclua a transação no contexto da API e inicie a chamada de transação passando o objeto contexto:</p>
+                                    <pre><code class="language-php ">/// After Step 4
+    try {
+        $apiContext->setTransaction($transaction);
+        return KryptonPay\Api\KryptonPay::createPayment($apiContext);
+    }
+    catch (\Exception $e) {
+        // This will print the detailed information on the exception.
+        //REALLY HELPFUL FOR DEBUGGING
+        echo $ex->getData();
+    }</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex ">
+                        <div id="doc-nav " class="doc-nav ">
+                            <nav id="doc-menu " class="nav doc-menu flex-column sticky ">
+                                <a class="nav-link scrollto " href="#introducao-section ">Introdução</a>
+                                <a class="nav-link scrollto " href="#download-section ">Download</a>
+                                <a class="nav-link scrollto " href="#installation-section ">Instalação</a>
+                                <nav class="doc-sub-menu nav flex-column ">
+                                    <a class="nav-link scrollto " href="#installation-composer ">Composer</a>
+                                    <nav class="doc-sub-menu nav flex-column ">
+                                        <a class="nav-link scrollto " href="#composer-1 ">Passo 1</a>
+                                        <a class="nav-link scrollto " href="#composer-2 ">Passo 2</a>
+                                        <a class="nav-link scrollto " href="#composer-3 ">Passo 3</a>
+                                        <a class="nav-link scrollto " href="#composer-4 ">Passo 4</a>
+                                    </nav>
+                                    <a class="nav-link scrollto " href="#installation-download ">Download Direto</a>
+                                    <nav class="doc-sub-menu nav flex-column ">
+                                        <a class="nav-link scrollto " href="#download-1 ">Passo 1</a>
+                                        <a class="nav-link scrollto " href="#download-2 ">Passo 2</a>
+                                        <a class="nav-link scrollto " href="#download-3 ">Passo 3</a>
+                                        <a class="nav-link scrollto " href="#download-4 ">Passo 4</a>
+                                    </nav>
+                                </nav>
+                                <a class="nav-link scrollto " href="#section-primeira-chamada ">Primeira chamada</a>
+                                <nav class="doc-sub-menu nav flex-column ">
+                                    <a class="nav-link scrollto " href="#primeira-chamada-1">Introdução</a>
+                                    <a class="nav-link scrollto " href="#primeira-chamada-2">1. Carregando o pacote SDK</a>
+                                    <a class="nav-link scrollto " href="#primeira-chamada-3">2. Token de acesso</a>
+                                    <a class="nav-link scrollto " href="#primeira-chamada-4">3. Ambiente</a>
+                                    <a class="nav-link scrollto " href="#primeira-chamada-5">4. Crie uma transação</a>
+                                    <a class="nav-link scrollto " href="#primeira-chamada-6">5. Criando uma chamada</a>
+                                </nav>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer " class="footer text-center ">
+        <div class="container ">
+
+        </div>
+    </footer>
+    <script type="text/javascript " src="../../assets/plugins/jquery-3.3.1.min.js "></script>
+    <script type="text/javascript " src="../../assets/plugins/bootstrap/js/bootstrap.min.js "></script>
+    <script type="text/javascript " src="../../assets/plugins/prism/prism.js "></script>
+    <script type="text/javascript " src="../../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js "></script>
+    <script type="text/javascript " src="../../assets/plugins/stickyfill/dist/stickyfill.min.js "></script>
+    <script type="text/javascript " src="../../assets/js/main.js "></script>
+</body>
+
+</html>
